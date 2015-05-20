@@ -1,0 +1,1 @@
+insert into wiki_term(`term`,`doc_frequency`) values ("你好",12);
