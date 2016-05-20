@@ -2,9 +2,11 @@ __author__ = 'user'
 
 import os
 import re
+
 from db.Page import *
-from config import  config
+import config
 from helper import helper
+
 
 # TODO LIST
 #1. remove attribute noise in the text according rule on wikipedia.
@@ -78,29 +80,39 @@ def split_document_to_fragment(document):
 
 ## init work
 
-def extract_from_db_to_file_system(number_limit = -1, min_page_len = 0):
+def extract_from_db_to_file_system(min_page_len=500):
     """
-    :param number_limit: the number limit , if value equal -1, it means no limit
     :param min_page_len:
     :return:
     """
-    folder = "temp"
-    if not os.path.isdir(folder):
+    folder = "%s/temp" % config.data_base_path
+    if not os.path.exists(folder) or not os.path.isdir(folder):
         os.makedirs(folder)
     p = Page()
-    counter = 1741794
-    for r in p.get_pages(number_limit,min_page_len):
-        print (counter -1741794) *1.0/670471
-        file_path = folder + "/" + str(counter)+".md"
-        f = open(file_path,"w")
-        f.write(r.page_title.encode("utf8"))
-        f.write("\n")
-        f.write(r.page_content)
-        f.close()
-        counter += 1
+    counter = 1
+    batch_size = 1000
+    offset = 0
+    limit = batch_size
+    batch_result = p.get_pages(offset, limit, min_page_len)
+    while len(batch_result) > 0:
+        for r in batch_result:
+            file_path = "%s/%s.md" % (folder, counter)
+            f = open(file_path, "w")
+            f.write(r.page_title.encode("utf8"))
+            f.write("\n")
+            f.write(r.page_content)
+            f.close()
+            if counter % 100 == 0:
+                print("extract %d th page now" % counter)
+            counter += 1
+        offset += batch_size
+        batch_result = p.get_pages(offset, limit, min_page_len)
+
 
 def save_fragment_list_to_file_system(fragment_list):
-    save_path = config.fragment_file_path_1
+    save_path = config.fragment_file_path
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
     result = False
     for fragment in fragment_list:
         file_name = fragment["title"]
@@ -141,44 +153,26 @@ def split_documents_test(file_name):
         doc_file.close()
 
 
-def split_documents(start = 0):
-    file_name_list = os.listdir(config.document_file_path_1)
+def split_documents(start=0):
+    file_name_list = os.listdir(config.document_file_path)
     file_counter = 0
     for file_name in file_name_list:
-
-        #ingore hidden file
+        # ignore hidden file
         if file_name[0] == '.':
             continue
         file_counter += 1
         if file_counter < start:
-            print "skip %d"%file_counter
+            print "skip %d" % file_counter
             continue
 
-
-
-        file_path = config.document_file_path_1 + "/" + file_name
-        doc_file  = open(file_path,"r")
+        file_path = config.document_file_path + "/" + file_name
+        doc_file  = open(file_path, "r")
         content = doc_file.read()
 
         fragment_list = split_document_to_fragment(content)
         save_fragment_list_to_file_system(fragment_list)
-
         log_text = "%d processed file %s"%(file_counter, file_path)
         if file_counter % 100 == 0:
-            print file_counter
-
+            print "split  %d th page now" % file_counter
         helper.log(log_text)
-        doc_file.close()
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -2,10 +2,15 @@
 __author__ = 'user'
 
 
-from config.config import *
+from config import *
+import os
 
 def log(text):
-    f = open(log_file ,"wa")
+
+    if not os.path.exists(log_file):
+        f = open(log_file ,"w")
+    else:
+        f = open(log_file ,"wa")
     f.write(text + "\n")
     f.close()
 

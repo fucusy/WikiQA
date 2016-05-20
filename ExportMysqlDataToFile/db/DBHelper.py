@@ -2,7 +2,7 @@ __author__ = 'user'
 
 import MySQLdb
 
-from config.config import DB
+from config import DB
 from helper.helper import Singleton
 
 class DBHelper:
