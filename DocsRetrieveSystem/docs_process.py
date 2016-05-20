@@ -7,17 +7,18 @@ import operator
 from math import log
 
 import jieba
-
 from helper import helper
-from DocsRetrieveSystem.config import config
-from DocsRetrieveSystem.db import DBHelper
-from DocsRetrieveSystem.db.DBHelper import term
-from DocsRetrieveSystem.db.DBHelper import doc_term
-from DocsRetrieveSystem.db.DBHelper import doc
-from DocsRetrieveSystem.db.DBHelper import get_docs_count
-from DocsRetrieveSystem.db.DBHelper import get_docs_average_len
-from DocsRetrieveSystem.db.DBHelper import entity
-from QuestionAnalysis.process.question import NLP
+from config import stop_word
+import config
+from db.DBHelper import DBHelper
+from db.DBHelper import term
+from db.DBHelper import doc_term
+from db.DBHelper import doc
+from db.DBHelper import get_docs_count
+from db.DBHelper import get_docs_average_len
+from db.DBHelper import entity
+
+
 
 def docs_to_vector(docs):
     """
@@ -29,10 +30,10 @@ def docs_to_vector(docs):
     """
     docs = docs.lower()
 
-    set_list  = jieba.cut(docs)
+    set_list = jieba.cut(docs)
     result = {}
     for term in set_list:
-        if term in NLP.get_stop_word():
+        if term in config.stop_word:
             continue
         if term in result.keys():
             result[term] += 1
@@ -40,10 +41,9 @@ def docs_to_vector(docs):
             result[term] = 1
     return result
 
-def get_stop_word(file_number = 1000):
+def get_stop_word(file_number=1000):
     file_name_list = os.listdir(config.docs_file_dir)
     f = open(config.stop_word_file_path,"wa")
-
     word_dict = {}
 
     file_counter = 0
@@ -73,14 +73,12 @@ def get_stop_word(file_number = 1000):
         else:
             break
 
-def scan_files(files_dir, file_name_list):
+def scan_files(files_dir):
     """
     :param files_dir: the directory which contains fragments
             file_name_list: the filename list
     :return:
     """
-
-
 
     last_counter_id = 0
     try:
@@ -90,21 +88,18 @@ def scan_files(files_dir, file_name_list):
         last_counter_id = int(line.split(" ")[0])
     except:
         pass
-    f = open(file_name_list)
-    file_name_list = f.readlines()
     file_counter = 0
-    for file_name in file_name_list:
-        file_name = file_name.strip("\n")
+    for file_name in os.listdir(files_dir):
+    #for file_name in ["109百貨-主線店舖", ]:
         if file_name[0] == '.':
             continue
         file_counter += 1
-        if file_counter % 100 == 0 :
+        if file_counter % 100 == 0:
             print file_counter
-
         if file_counter < last_counter_id:
-            print "skip %d"%file_counter
+            print "skip %d" % file_counter
             continue
-        file_path =  files_dir + "/" + file_name
+        file_path = files_dir + "/" + file_name
         process(file_path)
         helper.log("%d processed file %s"%(file_counter, file_path))
 
@@ -115,7 +110,7 @@ def process(file_path):
     :return:None
     """
     try:
-        doc_file  = open(file_path,"r")
+        doc_file = open(file_path,"r")
         docs = doc_file.read()
         doc_file.close()
     except:
@@ -125,14 +120,11 @@ def process(file_path):
     d = DBHelper()
 
     doc_id = d.insert_record_with_var("insert into wiki_doc(`doc_len`,`doc_path`) VALUES (%s,%s)",(doc_len,file_path))
-
-
     d = docs_to_vector(docs)
-
-    t =  term()
-    d_t  =  doc_term()
+    t = term()
+    d_t = doc_term()
     for word in d:
-        if word.encode("utf-8") not in config.stop_word:
+        if word not in stop_word:
             term_id = 0
             if t.check_term_exist(word):
                 term_id = t.get_term_id(word)
@@ -145,7 +137,7 @@ def process(file_path):
 def process_test():
     file_path = "/Volumes/Apple HD/Documents/scu.computer.scienct.2015.graduate.project/data/fragment/03式自動步槍-外部連結"
     try:
-        doc_file  = open(file_path,"r")
+        doc_file = open(file_path,"r")
         docs = doc_file.read()
         doc_file.close()
     except:

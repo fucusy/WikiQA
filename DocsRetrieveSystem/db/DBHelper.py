@@ -3,9 +3,9 @@ __author__ = 'user'
 
 import MySQLdb
 
-from DocsRetrieveSystem.config.config import DB
-from DocsRetrieveSystem.helper.helper import Singleton
-from DocsRetrieveSystem import helper
+from config import DB
+from helper.helper import Singleton
+import helper
 
 
 doc_table = "wiki_doc"

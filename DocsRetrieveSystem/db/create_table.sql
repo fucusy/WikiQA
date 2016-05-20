@@ -1,7 +1,7 @@
-#create database
+-- create database
 create database wiki_search charset = utf8;
 use wiki_search;
-#create tables
+-- create tables
 create table wiki_term(
   `term_id` int NOT NULL AUTO_INCREMENT COMMENT '中文词汇的ID',
     `term` VARCHAR(100) NOT NULL  COMMENT '中文词汇的内容',

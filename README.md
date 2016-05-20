@@ -15,6 +15,7 @@
 * python 2.7 library: 
     * jieba==0.38
     * MySQL-python==1.2.5
+    * xmldict==0.4.1
 * mysql Ver 14.14 or higher and lower, test on version 14.14
 * test on mac os, it may be support linux and windows.
 
@@ -83,8 +84,13 @@ it will cost you nearly 1 hour, then you will see `fragment` directory in your `
 #### how to run
 1. run sql script at DocsRetrieveSystem/db/create_table.sql to create tables for docs retrieve system, make sure database `wiki_search` do not exists before,
 after running, you will see a empty database named `wiki_search`
-2. 
+2. make sure the database is empty, by running sql:
 
+        truncate table wiki_doc_term;
+        truncate table wiki_term;
+        truncate table wiki_doc;
+
+3.  change directory to DocsRetrieveSystem, to do index by running `python main.py`,  15:22 ~  
 
 ### AnswerExtraction
 
@@ -100,6 +106,7 @@ data/question_with_answer_100.xml中的100 个问题中,有 33 个问题,在文�
 final answer accuracy: 5% 
 
 
+almost 200k pages, 720k fragments
 
 ## more detail you need to check the docs/related_paper.pdf, by the way it's Chinese
 
