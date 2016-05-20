@@ -1,0 +1,8 @@
+# ignore IDE auto-generated files
+.idea
+
+# ignore system auto-generated files
+.DS_Store
+
+# ignore python pre-compile files *.pyc
+*.pyc
