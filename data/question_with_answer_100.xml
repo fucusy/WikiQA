@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuestionSet>
+<question id="1">
+	<q>哪部电影是唯一一部获得奥斯卡最佳外语片的华语电影？</q><a>卧虎藏龙</a>
+	<c>OBJ_MOVIE</c>
+</question>
+<question id="2">
+	<q>武汉腐乳是用什么发酵的？</q><a>枯草杆菌</a><c>OBJ_BASIC</c>
+</question>
+
+<question id="3">
+	<q>哪种食物在2011年6月被美国CNN的iReport栏目评为“世界最恶心的食物”头名？</q><a>皮蛋</a>
+</question>
+<question id="4">
+	<q>自行车大约于哪一年传入中国？</q><a>1875年</a><c>TIME_YEAR</c>
+</question>
+<question id="5">
+	<q>谁是右手中国式直拍弧圈结合两面快攻打法选手？</q><a>王皓</a><c>HUM_PERSON</c>
+</question>
+<question id="6"><q>黄牛一词来源于哪里？</q><a>上海</a><c>LOC_BASIC</c></question>
+<question id="7"><q>周星驰其名出自于《滕王阁序》中的哪一句？</q><a>雄州雾列，俊彩星驰</a></question>
+<question id="8"><q>《愤怒的小鸟》（芬兰语：Vihainen Lintu，英语：Angry Birds）是哪个公司推出的一款益智游戏？</q><a>芬兰Rovio娱乐</a></question>
+<question id="9"><q>第一代iPhone是什么时候发布的？</q><a>2007年1月9日</a></question>
+<question id="10"><q>魔方是由谁发明的机械益智玩具？</q><a>比克·艾尔内</a></question>
+<question id="11"><q>Adobe Audition第一版于什么时候发布？</q><a>2003年8月18日</a></question>
+
+<question id="12">
+	<q>央视拥有多少个电视频道？</q><a>45</a>
+	<p>央视拥有45个电视频道，是世界上电视频道数量最多的电视台，除了面向中国大陆播出的频道之外，还通过卫星、互联网向全球播出包括中文在内的各种语言的国际频道。</p>
+</question>
+
+<question id="13"><q>冯小刚的现任妻子是谁？</q><a>演员徐帆</a></question>
+<question id="14"><q>王宝强在哪一年首次参加中央电视台“春晚”？</q><a>2008</a></question>
+<question id="15"><q>芭蕾起源于哪个国家？</q><a>意大利</a></question>
+<question id="16"><q>戏剧的表演形式多种多样，常见的包括哪些？</q><a>话剧、歌剧、舞剧、音乐剧、木偶戏等</a></question>
+<question id="17"><q>在美国，已知最早的十字绣样品目前在存放在马萨诸塞州普利茅斯的哪里？</q><a>Pilgrim Hall博物馆</a></question>
+<question id="18"><q>北京大学现有几个校区？</q><a>六个</a></question>
+<question id="19"><q>义务教育的三个基本原则是什么？</q><a>强制、普遍与免费</a></question>
+<question id="20"><q>2011年8月，莫言创作的什么长篇小说获得第8届茅盾文学奖？</q><a>《蛙》</a></question>
+<question id="21"><q>截拳道是谁创立的一类现代武术体系？</q><a>李小龙</a></question>
+<question id="22"><q>哪个是唯一两次获选为世界三大夜景的城市？</q><a>香港</a></question>
+<question id="23"><q>埃菲尔铁塔的结构使用了多少公吨的熟铁？</q><a>7,300</a></question>
+<question id="24"><q>《天空之城》是何时推出的一部长篇动画电影？</q><a>1986年8月2日</a></question>
+<question id="25"><q>乒乓球球台被一个多高的球网分为两部分？</q><a>15.25厘米</a></question>
+<question id="26"><q>邓亚萍多大时夺得了首个世界冠军？</q><a>16岁</a></question>
+<question id="27"><q>在历史上乌镇曾出过多少名举人？</q><a>161</a></question>
+<question id="28"><q>南京市市旗的下部三份之一是什么颜色？</q><a>粉绿色</a></question>
+<question id="29"><q>全世界约有多少佛教信众？</q><a>5亿</a></question>
+<question id="30"><q>《本草纲目》撰成于哪一年？</q><a>万历六年（1578年）</a></question>
+<question id="31"><q>元曲共计多少支曲牌？</q><a>447</a></question>
+<question id="32"><q>人的岁数等于12的倍数称为什么？</q><a>本命年</a></question>
+<question id="33"><q>服务业目前于发达国家的产业比重约占多少？</q><a>70%以上</a></question>
+<question id="34"><q>姚明的父亲姚志源多高？</q><a>6英尺10英寸（2.08米）</a></question>
+<question id="35"><q>马尔代夫的第一大支柱产业是什么？</q><a>旅游业</a></question>
+<question id="36"><q>澳大利亚是南半球面积第几大的国家？</q><a>二</a></question>
+<question id="37"><q>阿根廷国家足球队赢得过多少次美洲杯冠军？</q><a>十四</a></question>
+<question id="38"><q>平均人口密度最高的大洲是？</q><a>欧洲</a></question>
+<question id="39"><q>中国历史上最杰出的浪漫主义诗人是？</q><a>李白</a></question>
+<question id="40"><q>甲午战争爆发的标志是？</q><a>丰岛海战</a></question>
+<question id="41"><q>《华英字典》的作者是？</q><a>马礼逊</a></question>
+<question id="42"><q>《资治通鉴》的撰写一共耗时多少年？</q><a>19</a></question>
+<question id="43"><q>世界上首位从南坡登上珠穆朗玛峰的女性的国籍是？</q><a>日本</a></question>
+<question id="44"><q>最后宣布废除奴隶制度的行政地区是？</q><a>毛里塔尼亚</a></question>
+<question id="45"><q>国际海洋法法庭的总部位于哪个国家？</q><a>德国</a></question>
+<question id="46"><q>《苏德互不侵犯条约》的签订地点是？</q><a>莫斯科</a></question>
+<question id="47"><q>莫言获得诺贝尔文学奖的年份是？</q><a>2012</a></question>
+<question id="48"><q>元谋人化石发现于中国的哪一省份？</q><a>云南</a></question>
+<question id="49"><q>美国的当代人类学通常划分为几大分支？</q><a>四</a></question>
+<question id="50"><q>“中华民族”一词最早由谁提出？</q><a>梁启超</a></question>
+<question id="51"><q>欧洲的第一所大学是？</q><a>博洛尼亚大学</a></question>
+<question id="52"><q>图书馆学最早由谁提出？</q><a>马丁·施莱廷格</a></question>
+<question id="53"><q>约翰纳什的博士学位是在哪所大学获得的？</q><a>普林斯顿大学</a></question>
+<question id="54"><q>现存所有老虎亚种中最小的亚种是？</q><a>苏门答腊虎</a></question>
+<question id="55"><q>目前的北回归线位置是由哪个组织确定的？</q><a>联合国教科文组织</a></question>
+<question id="56"><q>首先分离出元素氟的化学家是？</q><a>亨利·莫瓦桑</a></question>
+<question id="57"><q>第一位获得菲尔兹奖的女性是？</q><a>玛丽安·米尔札哈尼</a></question>
+<question id="58"><q>薛定谔方程的提出者的国籍是？</q><a>奥地利</a></question>
+<question id="59"><q>太阳系中唯一一颗没有磁场的行星是？</q><a>金星</a></question>
+<question id="60"><q>位于双子座和狮子座之间的星座是？</q><a>巨蟹座</a></question>
+<question id="61"><q>世界最大的流动性沙漠是？</q><a>塔克拉玛干沙漠</a></question>
+<question id="62"><q>人类合成的第一种抗菌药是？</q><a>磺胺</a></question>
+<question id="63"><q>第一种以人工合成无机物质而得到的有机化合物是？</q><a>尿素</a></question>
+<question id="64"><q>中国历史上规模最大的一套丛书是？</q><a>四库全书</a></question>
+<question id="65"><q>世界上唯一拥有三个首都的国家是？</q><a>南非</a></question>
+<question id="66"><q>中国近代第一所国立综合性大学是？</q><a>北京大学</a></question>
+<question id="67"><q>马达加斯加位于哪个大洲？</q><a>非洲</a></question>
+<question id="68"><q>经典力学的基础是？</q><a>牛顿运动定律</a></question>
+<question id="69"><q>到2012年为止，联合国共有多少个成员国？</q><a>193</a></question>
+<question id="70"><q>“耶稣”原文为希腊语，其意思是？</q><a>“耶和华是拯救”</a></question>
+<question id="71"><q>路由器处于OSI模型的哪一层？</q><a>网络层</a></question>
+<question id="72"><q>转基因植物常用哪些方法？</q><a>花粉管通道法、农杆菌介导转化法、基因枪介导转化法、细胞融合法</a></question>
+<question id="73"><q>空想社会主义学说的著名代表人物有哪些？</q><a>欧文、圣西门和傅立叶</a></question>
+<question id="74"><q>大庆油田所在省份的省会是？</q><a>哈尔滨</a></question>
+<question id="75"><q>交流电波形一般表现为何种曲线？</q><a>正弦曲线</a></question>
+<question id="76"><q>KMP算法中的K中文名字叫什么？</q><a>高德纳</a></question>
+<question id="77"><q>紫外线的波长大约在什么范围内？</q><a>10纳米至400纳米</a></question>
+<question id="78"><q>被道教奉为太上老君的人物姓什么？</q><a>李</a></question>
+<question id="79"><q>芳香烃是何种物质的总称？</q><a>苯及其衍生物</a></question>
+<question id="80"><q>流过伊甸园的四条河中现存的有哪些？</q><a>幼发拉底河、底格里斯河</a></question>
+<question id="81"><q>快速傅里叶变换算法的时间复杂度为？</q><a>O(nlogn)</a></question>
+<question id="82"><q>挑战者号坠毁时载有多少位宇航员？</q><a>7</a></question>
+<question id="83"><q>锂电池的发明者在美国有多少项专利？</q><a>1093</a></question>
+<question id="84"><q>活字印刷术的发明是为了取代哪种技术？</q><a>雕版印刷术</a></question>
+<question id="85"><q>磁悬浮列车速度最高可达每小时多少公里？</q><a>550</a></question>
+<question id="86"><q>JPEG2000格式文件扩展名为？</q><a>.jp2、.j2c</a></question>
+<question id="87"><q>哪些能源属于可再生能源？</q><a>太阳能、风力、潮汐能、地热能</a></question>
+<question id="88"><q>拜占庭将军问题的提出者是哪国人？</q><a>美国</a></question>
+<question id="89"><q>柴油和酒精的沸点哪个高？</q><a>柴油</a></question>
+<question id="90"><q>并查集定义了哪两种操作？</q><a>Find和Union</a></question>
+<question id="91"><q>挖掘机在台湾被叫做什么？</q><a>怪手</a></question>
+<question id="92"><q>首先发现碳纳米管所使用的工具是什么？</q><a>透射电子显微镜</a></question>
+<question id="93"><q>夏娃是由亚当身上哪个部位造出的？</q><a>肋骨</a></question>
+<question id="94"><q>霍夫曼编码的发明者曾在哪所学校攻读博士学位？</q><a>麻省理工</a></question>
+<question id="95"><q>小浪底水利枢纽工程主体在哪一年完工？</q><a>2001</a></question>
+<question id="96"><q>图灵奖目前的奖金有多少？</q><a>250,000美元</a></question>
+<question id="97"><q>俄狄浦斯的父母是？</q><a>拉伊俄斯和伊俄卡斯忒</a></question>
+<question id="98"><q>每公斤TNT炸药可以产生多少能量？</q><a>420万焦耳</a></question>
+<question id="99"><q>姚期智在北京哪所高校兼任教授？</q><a>清华大学</a></question>
+<question id="100"><q>最早的基督教圣诞颂歌出现在哪里？</q><a>古罗马</a></question>
+</QuestionSet>
