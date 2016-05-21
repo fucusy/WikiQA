@@ -102,7 +102,6 @@ def scan_files(files_dir):
         process(file_path)
         helper.log("%d processed file %s"%(file_counter, file_path))
 
-
 def process(file_path):
     """
     :param file_path: the file path which is needed to process
@@ -147,21 +146,9 @@ def process_test():
     d = docs_to_vector(docs)
     print d
 def search(query):
-    top_ten = top_ten_docs(query)
-    count = 0
-    result = "<ol>"
-    for doc in top_ten:
-        count += 1
-        try:
-            f = open(doc.doc_path)
-            result += "<li>" + f.read() + "</li>\n"
-            f.close()
-        except:
-            print "can not open %s"%doc.doc_path
-
-    result += "</ol>"
-
-    return result
+    query_list = jieba.cut(query)
+    fragments = top_ten_docs(query_list)
+    return fragments
 
 def top_ten_docs(query):
     """
@@ -261,7 +248,6 @@ def top_ten_docs(query):
 
                 d_f_w = term_dic[term_id]["doc_frequency"]
 
-
                 doc_term_score = c_w_q * c_w_d * (k + 1) * 1.0
                 doc_term_score /= (c_w_q + k*(1 - b + b * d_len / average_len))
                 doc_term_score *= log((M + 1) * 1.0 / d_f_w)
@@ -281,23 +267,16 @@ def top_ten_docs(query):
 
         if item_count >= 10:
             break
-
     result_fragment = []
-
-
 
     for d in top_ten:
         try:
             f = open(d.doc_path)
             fragment_doc = f.read()
             result_fragment.append(fragment_doc)
-
-
             f.close()
         except:
             print "can not open %s"%doc.doc_path
-
-
     return result_fragment
 
 def build_wiki_entity_list():

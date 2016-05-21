@@ -5,7 +5,8 @@ import MySQLdb
 
 from config import DB
 from helper.helper import Singleton
-import helper
+from helper import helper
+
 
 
 doc_table = "wiki_doc"
