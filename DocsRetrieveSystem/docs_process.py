@@ -90,12 +90,11 @@ def scan_files(files_dir):
         pass
     file_counter = 0
     for file_name in os.listdir(files_dir):
-    #for file_name in ["109百貨-主線店舖", ]:
         if file_name[0] == '.':
             continue
         file_counter += 1
         if file_counter % 100 == 0:
-            print file_counter
+            print "%d processed file %s" % (file_counter, file_name)
         if file_counter < last_counter_id:
             print "skip %d" % file_counter
             continue

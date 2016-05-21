@@ -90,8 +90,9 @@ after running, you will see a empty database named `wiki_search`
         truncate table wiki_term;
         truncate table wiki_doc;
 
-3.  change directory to DocsRetrieveSystem, to do index by running `python main.py`,  15:22 ~  
-
+3.  change directory to DocsRetrieveSystem, to do index by running `python main.py`,  it may cost you more than 10 hours. it pretty slow.
+4. you will see tons of data in your database `wiki_search`, you need to keep the `fragment` directory in your `data_base_path`, in the database, do not remove them.
+ 
 ### AnswerExtraction
 
 
