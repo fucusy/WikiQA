@@ -6,3 +6,11 @@
 
 # ignore python pre-compile files *.pyc
 *.pyc
+*/*.pyc
+*/*/*.pyc
+
+
+# ignore log files
+
+*/log.txt
+log.txt
