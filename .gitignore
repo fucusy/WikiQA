@@ -15,3 +15,8 @@
 */log.txt
 log.txt
 logs.txt
+
+
+
+# ignore project generated files
+QuestionAnalysis/data/document_retrieve_system.txt

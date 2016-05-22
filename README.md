@@ -44,11 +44,12 @@ recommend to use [mwdum.py](https://github.com/nutztherookie/mwdum.py),
   
 3. clean data and get useful data into file system using ExportMysqlDataToFile module
 4. build retrieve system using DocsRetrieveSystem module
-5. this system is ready to answer question, run the script in AnswerExtraction, AnswerExtraction/process/answer.py
+5. this system is ready to answer question, run the script in QuestionAnalysis, change dir to QuestionAnalysis,
+then run the main.py `python main.py`, you can see the question answer system performance on 100 sample question in 
+`data/question_with_answer_100.xml`, but the performance is really bad. but you can learn a lot from the project code.
 
 
 ## module description
-every module is a Pycharm project, you need run it in Pycharm if you do not know exactly how python module works
 
 ### ExportMysqlDataToFile
 
@@ -95,7 +96,6 @@ after running, you will see a empty database named `wiki_search`
 if you want to search fragment about 天安门, you can run `python main.py search 天安门` to check the DocsRetrieveSystem works 
  
 ### AnswerExtraction
-
 
 
 
