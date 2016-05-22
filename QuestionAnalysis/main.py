@@ -1,11 +1,16 @@
 #!encoding=utf8
 __author__ = 'user'
-from process import file
-import jieba.posseg as pseg
-from process import question
-from config.main import *
+
+import config
+import sys
+sys.path.append("%s/../" % config.Location.module_path)
+
+from QuestionAnalysis.process import file
+from QuestionAnalysis.process import question
 from DocsRetrieveSystem.docs_process import *
 from AnswerExtraction.process.answer import *
+
+
 
 
 def main_debug():
