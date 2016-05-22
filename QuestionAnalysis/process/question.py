@@ -1,14 +1,17 @@
 #!encoding=utf8
 __author__ = 'user'
 
-import jieba
-from DocsRetrieveSystem.db.DBHelper import *
-from QuestionAnalysis.config.main import NLP
 import operator
-from QuestionAnalysis.config.main import Location
 import random
-from QuestionAnalysis.process.file import save_to_file
 import math
+
+import jieba
+
+from DocsRetrieveSystem.db.DBHelper import *
+from QuestionAnalysis.config import NLP
+from QuestionAnalysis.config import Location
+from QuestionAnalysis.process.file import save_to_file
+
 
 def remove_stop_word(s_list):
     result_list = []
@@ -400,4 +403,4 @@ def question_class_analysis():
     print "%d class"%class_count_sum
 
 if __name__ == '__main__':
-    ten_fold_test()
+    print q_classifier.get_class_label(u"现存所有老虎亚种中最小的亚种是？")

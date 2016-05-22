@@ -1,10 +1,13 @@
 __author__ = 'user'
 
-import xmldict
 import os
 import random
-from QuestionAnalysis.config.main import Location
 import operator
+
+import xmldict
+
+from QuestionAnalysis.config import Location
+
 
 def parse_xml(file_path):
     f = open(file_path,"r")
