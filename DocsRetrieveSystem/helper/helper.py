@@ -2,7 +2,7 @@
 __author__ = 'user'
 
 from datetime import datetime
-from config import log_file
+from DocsRetrieveSystem.config import log_file
 import os
 
 def log(text):
@@ -11,7 +11,10 @@ def log(text):
     if not os.path.exists(log_file):
         mode = "w"
     f = open(log_file, mode)
-    f.write(text + "\n")
+    try:
+        f.write(text + "\n")
+    except:
+        f.write(text.encode("utf8") + "\n")
     f.close()
 
 def get_datetime():

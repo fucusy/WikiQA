@@ -1,9 +1,14 @@
 #!encoding=utf8
 __author__ = 'user'
 
-from docs_process import *
-import config
+
 import sys
+import config as c
+sys.path.append("%s/../" % c.module_path)
+
+from DocsRetrieveSystem.docs_process import *
+import DocsRetrieveSystem.config as config
+
 
 # def xml_to_txt_question_answer():
 #     txt = ""

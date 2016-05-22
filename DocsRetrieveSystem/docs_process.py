@@ -7,17 +7,17 @@ import operator
 from math import log
 
 import jieba
-from helper import helper
-from config import stop_word
-import config
-from db.DBHelper import DBHelper
-from db.DBHelper import term
-from db.DBHelper import doc_term
-from db.DBHelper import doc
-from db.DBHelper import get_docs_count
-from db.DBHelper import get_docs_average_len
-from db.DBHelper import entity
-
+from DocsRetrieveSystem.helper import helper
+from DocsRetrieveSystem.config import stop_word
+import DocsRetrieveSystem.config as config
+from DocsRetrieveSystem.db.DBHelper import DBHelper
+from DocsRetrieveSystem.db.DBHelper import term
+from DocsRetrieveSystem.db.DBHelper import doc_term
+from DocsRetrieveSystem.db.DBHelper import doc
+from DocsRetrieveSystem.db.DBHelper import get_docs_count
+from DocsRetrieveSystem.db.DBHelper import get_docs_average_len
+from DocsRetrieveSystem.db.DBHelper import entity
+from QuestionAnalysis.process import question
 
 
 def docs_to_vector(docs):
@@ -156,7 +156,7 @@ def top_ten_docs(query):
     :param query the query is a list
     :return:
     """
-
+    # query = [x.encode("utf8") for x in query]
     top_ten = []
     start = time.time()
     s_vec = {}
@@ -202,16 +202,12 @@ def top_ten_docs(query):
 
         doc_term_list = d_t.get_doc_term_list_by_term_id(term_id)
 
-        doc_list = [d.doc_id for d in doc_term_list]
+        doc_id_list = [d.doc_id for d in doc_term_list]
         if doc_list_result_init:
-            new_doc_list_result = []
-            for i in doc_list:
-                if i in doc_list_result:
-                    new_doc_list_result.append(i)
-            doc_list_result = list(new_doc_list_result)
+            doc_list_result = list(set(doc_list_result) & set(doc_id_list))
 
         else:
-            doc_list_result = list(doc_list)
+            doc_list_result = doc_id_list
             doc_list_result_init = True
 
         for doc_term_item in doc_term_list:
@@ -239,7 +235,7 @@ def top_ten_docs(query):
         score = 0
         for term_id in term_dic.keys():
             doc_term_id = "%d-%d"%(doc_id, term_id)
-            if doc_term_id  in doc_term_count.keys():
+            if doc_term_id in doc_term_count.keys():
 
                 c_w_q = s_vec[term_dic[term_id]["term"]]
                 c_w_d = doc_term_count[doc_term_id]

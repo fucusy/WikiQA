@@ -3,9 +3,9 @@ __author__ = 'user'
 
 import MySQLdb
 
-from config import DB
-from helper.helper import Singleton
-from helper import helper
+from DocsRetrieveSystem.config import DB
+from DocsRetrieveSystem.helper.helper import Singleton
+from DocsRetrieveSystem.helper import helper
 
 
 
